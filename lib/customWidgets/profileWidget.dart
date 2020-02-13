@@ -17,7 +17,7 @@ class ProfileWidget extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/img/background.png"),
+              image: AssetImage("assets/img/card_background.png"),
               fit: BoxFit.cover,
             ),
           ),

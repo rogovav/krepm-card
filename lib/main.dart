@@ -44,55 +44,57 @@ class HomePage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            // color: Color.fromRGBO(67, 38, 25, .5),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: width * 0.8,
-                      child: logoWidget()
-                    ),
-                  ]
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  width: width * 0.9,
-                  child: ProfileWidget(),
-                ),
-                SizedBox(height: 10,),
-                Container(
-                  width: width * 0.9,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+            child: Container(
+              color: Color.fromRGBO(67, 38, 25, .3),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Новости и акции", 
-                        style: TextStyle(
-                          color: Color.fromRGBO(248, 7, 7, .8),
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold
-                        ),
-                        textAlign: TextAlign.left,
+                      Container(
+                        width: width * 0.8,
+                        child: logoWidget()
                       ),
                     ]
                   ),
-                ),
-                SizedBox(height: 5,),
-                Flexible(
-                  child: Container(
+                  SizedBox(height: 10,),
+                  Container(
                     width: width * 0.9,
-                    child: StocksWidget(),
+                    child: ProfileWidget(),
                   ),
-                ),
-              ]
-            )
+                  SizedBox(height: 10,),
+                  Container(
+                    width: width * 0.9,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Новости и акции", 
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .8),
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ]
+                    ),
+                  ),
+                  SizedBox(height: 5,),
+                  Flexible(
+                    child: Container(
+                      width: width * 0.9,
+                      child: StocksWidget(),
+                    ),
+                  ),
+                ]
+              )
+            ),
           ),
-        ),
+        )
       ),
     );
   }
