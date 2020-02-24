@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:krepm_new/qrCodeView.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenRatio = MediaQuery.of(context).size.width / 320;
     return Container(
       child: Card(
         color: Color.fromRGBO(67, 38, 25, 1),
@@ -23,6 +26,7 @@ class ProfileWidget extends StatelessWidget {
           ),
           padding: EdgeInsets.all(15),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,7 +37,7 @@ class ProfileWidget extends StatelessWidget {
                         "Сумма покупок:", 
                         style: TextStyle(
                           color: Color.fromRGBO(255, 204, 183, 1),
-                          fontSize: 13
+                          fontSize: 13 * screenRatio
                         ),
                       ),
                       SizedBox(height: 3,),
@@ -41,34 +45,50 @@ class ProfileWidget extends StatelessWidget {
                         "35 275 ₽", 
                         style: TextStyle(
                           color: Color.fromRGBO(249, 241, 10, 1),
-                          fontSize: 26
+                          fontSize: 26 * screenRatio
                         ),
                       ),
                     ]
                   ),
-                  Container(
-                    width: 49,
-                    height: 49,
-                    child: Image(image: AssetImage('assets/img/barcode.png')),
-                  )
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => QRCodeView())
+                      );
+                    },
+                    child: Container(
+                      color: Colors.white70,
+                      width: 49 * screenRatio,
+                      height: 49 * screenRatio,
+                      padding: EdgeInsets.all(0),
+                      child: QrImage(
+                        data: "krepm000003",
+                        version: QrVersions.auto,
+                        padding: EdgeInsets.all(screenRatio > 1 ? 5 : 1),
+                      ),
+                    )
+                  ),
                 ],
               ),
               SizedBox(height: 18,),
-              Row(
+              Column(
+                children: <Widget>[
+                    Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
                     "3%", 
                     style: TextStyle(
                       color: Color.fromRGBO(255, 204, 183, 1),
-                      fontSize: 13
+                      fontSize: 13 * screenRatio
                     )
                   ),
                   Text(
                     "5%", 
                     style: TextStyle(
                       color: Color.fromRGBO(255, 204, 183, 1),
-                      fontSize: 13
+                      fontSize: 13 * screenRatio
                     )
                   ),
                 ],
@@ -86,13 +106,16 @@ class ProfileWidget extends StatelessWidget {
               RichText(text: TextSpan(children: [
                 TextSpan(
                   text: 'До повышения бонусного уровня осталось набрать на ', 
-                  style: TextStyle(color: Color.fromRGBO(249, 241, 10, 0.7), fontSize: 10)
+                  style: TextStyle(color: Color.fromRGBO(249, 241, 10, 0.7), fontSize: 10 * screenRatio)
                 ),
                 TextSpan(
                   text: '2 832 ₽',
-                  style: TextStyle(color: Color.fromRGBO(249, 241, 10, 1), fontSize: 10, fontWeight: FontWeight.bold)
+                  style: TextStyle(color: Color.fromRGBO(249, 241, 10, 1), fontSize: 10 * screenRatio, fontWeight: FontWeight.bold)
                 )
               ]))
+                ],
+              ),
+              
             ]
           ),
         )

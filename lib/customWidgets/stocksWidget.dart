@@ -36,10 +36,9 @@ class StocksWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 5),
         itemCount: stocks.length,
         itemBuilder: (context, i) {
-          return stockCell(stocks[i]);
+          return stockCell(stock: stocks[i], context: context);
         }
       )
     );
