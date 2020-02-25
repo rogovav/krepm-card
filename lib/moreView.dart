@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:krepm_new/customWidgets/bottomTabBar.dart';
 import 'package:krepm_new/customWidgets/logoWidget.dart';
+import 'package:krepm_new/feedbackView.dart';
 
 class MorePage extends StatelessWidget {
 
@@ -46,15 +47,24 @@ class MorePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Text(
-                      "Обратная связь",
-                      style: TextStyle(
-                        color: Color.fromRGBO(249, 241, 10, .9), 
-                        fontSize: 16, 
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.underline
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FeedbackPage())
+                        );
+                      },
+                      child: Text(
+                        "Обратная связь",
+                        style: TextStyle(
+                          color: Color.fromRGBO(249, 241, 10, .9), 
+                          fontSize: 16, 
+                          fontWeight: FontWeight.normal,
+                          decoration: TextDecoration.underline
+                        ),
                       ),
-                    ),
+                    )
                   ),
                   SizedBox(height: 20),
                   Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Text(
