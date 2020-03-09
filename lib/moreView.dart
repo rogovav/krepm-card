@@ -22,7 +22,7 @@ class MorePage extends StatelessWidget {
       ),
       Scaffold(
         backgroundColor: Colors.transparent,
-        bottomNavigationBar: BottomTabBar(currentIndex: 4),
+        bottomNavigationBar: BottomTabBar(currentIndex: 3),
         body: SafeArea(
           child: Container(
             color: Colors.transparent,
@@ -36,57 +36,163 @@ class MorePage extends StatelessWidget {
                     Container(width: width * 0.8, child: logoWidget()),
                   ]),
                   SizedBox(height: 20),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Text(
-                      "Программа лояльности",
-                      style: TextStyle(
-                        color: Color.fromRGBO(249, 241, 10, .9), 
-                        fontSize: 16, 
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.underline
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), 
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => FeedbackPage())
-                        );
-                      },
-                      child: Text(
-                        "Обратная связь",
-                        style: TextStyle(
-                          color: Color.fromRGBO(249, 241, 10, .9), 
-                          fontSize: 16, 
-                          fontWeight: FontWeight.normal,
-                          decoration: TextDecoration.underline
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(249, 241, 10, .9),
+                        child: Text(
+                          'Программа лояльности',
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
                         ),
                       ),
                     )
                   ),
-                  SizedBox(height: 20),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Text(
-                      "Для юридических лиц",
-                      style: TextStyle(
-                        color: Color.fromRGBO(248, 7, 7, .9), 
-                        fontSize: 16, 
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.underline
+                  SizedBox(height: 15),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(249, 241, 10, .9),
+                        child: Text(
+                          'Обратная связь',
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),
                       ),
-                    ),
+                    )
                   ),
-                  SizedBox(height: 20),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Text(
-                      "О компании",
-                      style: TextStyle(
-                        color: Color.fromRGBO(249, 241, 10, .9), 
-                        fontSize: 16, 
-                        fontWeight: FontWeight.normal,
-                        decoration: TextDecoration.underline
+                  SizedBox(height: 15),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(249, 241, 10, .9),
+                        child: Text(
+                          'О компании',
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),
                       ),
-                    ),
+                    )
+                  ),
+                  SizedBox(height: 15),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(249, 241, 10, .9),
+                        child: Text(
+                          'Личные данные',
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),
+                      ),
+                    )
+                  ),
+                  SizedBox(height: 15),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(249, 241, 10, .9),
+                        child: Text(
+                          'История начислений',
+                          style: TextStyle(
+                            color: Color.fromRGBO(248, 7, 7, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),
+                      ),
+                    )
+                  ),
+                  SizedBox(height: 15),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: ButtonTheme(
+                      minWidth: width,
+                      height: 50.0,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          side: BorderSide(color: Color.fromRGBO(67, 38, 25, 1))
+                        ),
+                        color: Color.fromRGBO(248, 7, 7, .9),
+                        child: Text(
+                          'Для юридических лиц',
+                          style: TextStyle(
+                            color: Color.fromRGBO(249, 241, 10, .9), 
+                            fontSize: 16, 
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),
+                      ),
+                    )
+                  ),
+                  SizedBox(height: 30),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    child: Center(
+                      child: Text(
+                        "Выйти",
+                        style: TextStyle(
+                          color: Color.fromRGBO(249, 241, 10, .9), 
+                          fontSize: 16, 
+                          fontWeight: FontWeight.bold,
+                          // decoration: TextDecoration.underline
+                        ),
+                      ),
+                    )
                   ),
                 ]
               )
