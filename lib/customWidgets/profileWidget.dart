@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:krepm_new/models/profileCard.dart';
 import 'package:krepm_new/qrCodeView.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({Key key}) : super(key: key);
+  final ProfileCard profileCard;
+
+  const ProfileWidget({Key key, @required this.profileCard}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class ProfileWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 3,),
                       Text(
-                        "35 275 ₽", 
+                        profileCard.sum, 
                         style: TextStyle(
                           color: Color.fromRGBO(249, 241, 10, 1),
                           fontSize: 26 * screenRatio
@@ -54,7 +57,7 @@ class ProfileWidget extends StatelessWidget {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => QRCodeView())
+                        MaterialPageRoute(builder: (context) => QRCodeView(cardNumber: "KREPM" + profileCard.card,))
                       );
                     },
                     child: Container(
@@ -63,7 +66,7 @@ class ProfileWidget extends StatelessWidget {
                       height: 49 * screenRatio,
                       padding: EdgeInsets.all(0),
                       child: QrImage(
-                        data: "krepm000003",
+                        data: "KREPM" + profileCard.card,
                         version: QrVersions.auto,
                         padding: EdgeInsets.all(screenRatio > 1 ? 5 : 1),
                       ),
@@ -78,14 +81,14 @@ class ProfileWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "3%", 
+                    profileCard.percent + "%", 
                     style: TextStyle(
                       color: Color.fromRGBO(255, 204, 183, 1),
                       fontSize: 13 * screenRatio
                     )
                   ),
                   Text(
-                    "5%", 
+                    (int.parse(profileCard.percent) + 1).toString() + "%", 
                     style: TextStyle(
                       color: Color.fromRGBO(255, 204, 183, 1),
                       fontSize: 13 * screenRatio
@@ -98,7 +101,7 @@ class ProfileWidget extends StatelessWidget {
                 height: 4,
                 child: LinearProgressIndicator(
                   backgroundColor: Color.fromRGBO(156, 114, 95, 1),
-                  value: 0.70,
+                  value: double.parse(profileCard.sum) / (double.parse(profileCard.sum) + double.parse(profileCard.nextSum)),
                   valueColor: AlwaysStoppedAnimation(Color.fromRGBO(248, 7, 7, 1)),
                 ),
               ),
@@ -109,7 +112,7 @@ class ProfileWidget extends StatelessWidget {
                   style: TextStyle(color: Color.fromRGBO(249, 241, 10, 0.7), fontSize: 10 * screenRatio)
                 ),
                 TextSpan(
-                  text: '2 832 ₽',
+                  text: profileCard.nextSum + ' ₽',
                   style: TextStyle(color: Color.fromRGBO(249, 241, 10, 1), fontSize: 10 * screenRatio, fontWeight: FontWeight.bold)
                 )
               ]))

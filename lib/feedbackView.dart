@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:krepm_new/customWidgets/bottomTabBar.dart';
-import 'package:krepm_new/customWidgets/logoWidget.dart';
 
 class FeedbackPage extends StatelessWidget {
 
@@ -49,7 +48,8 @@ class FeedbackPage extends StatelessWidget {
                         hintColor: Color.fromRGBO(249, 241, 10, .4),
                       ),
                       child: TextField(
-                        obscureText: true,
+                        keyboardType: TextInputType.emailAddress,
+                        obscureText: false,
                         maxLength: 50,
                         style: TextStyle(color: Color.fromRGBO(249, 241, 10, .9)),
                         decoration: InputDecoration(

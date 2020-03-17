@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QRCodeView extends StatelessWidget {
+  final String cardNumber;
+
+  QRCodeView({Key key, @required this.cardNumber}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -40,7 +44,7 @@ class QRCodeView extends StatelessWidget {
                   height: width * 0.7,
                   padding: EdgeInsets.all(0),
                   child: QrImage(
-                    data: "krepm000003",
+                    data: cardNumber,
                     version: QrVersions.auto,
                     padding: EdgeInsets.all(screenRatio > 1 ? 10 : 5),
                   ),

@@ -22,7 +22,7 @@ class StocksPage extends StatelessWidget {
       ),
       Scaffold(
         backgroundColor: Colors.transparent,
-        bottomNavigationBar: BottomTabBar(currentIndex: 2),
+        bottomNavigationBar: BottomTabBar(currentIndex: 1),
         body: SafeArea(
           child: Container(
             color: Colors.transparent,

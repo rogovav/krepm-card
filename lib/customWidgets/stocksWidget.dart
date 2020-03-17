@@ -1,35 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:krepm_new/cells/stockCellWidget.dart';
 import 'package:krepm_new/models/stock.dart';
+import 'package:http/http.dart' as http;
 
 class StocksWidget extends StatelessWidget {
 
   final List<Stock> stocks = <Stock>[
     Stock(
-      img: 'https://picsum.photos/250?image=7', 
-      title: "Акция 1", 
+      img: 'http://krepm.pro/app-files/stock-price.jpg', 
+      title: "Ликвидация остатков", 
+      description: "Сеть магазинов «Креп.М» объявляет о ликвидации товаров! Освобождаем полки для нового ассортимента товаров! Основные предложения ждут непосредственно на полках, поэтому спешите в ближайший магазин «Креп.М» за невероятной выгодой!\nКоличество товара ограничено."
+    ),
+    Stock(
+      img: 'http://krepm.pro/app-files/garant-price.jpg', 
+      title: "Гарантия лучшей цены", 
       description: "Lorem ipsum – псевдо-латинский текст, который используется для веб дизайна, типографии, оборудования, и распечатки."
     ), 
     Stock(
-      img: 'https://picsum.photos/250?image=45', 
-      title: "Акция 2", 
-      description: "Lorem ipsum по большей части является элементом латинского текста классического автора и философа Цицерона."
-    ), 
-    Stock(
-      img: 'https://picsum.photos/250?image=32', 
-      title: "Новость 1", 
+      img: 'http://krepm.pro/app-files/gift-certificate.jpg', 
+      title: "Подарочные сертификаты", 
       description: "Lorem ipsum – псевдо-латинский текст."
     ), 
     Stock(
-      img: 'https://picsum.photos/250?image=16', 
-      title: "Акция 3", 
+      img: 'http://krepm.pro/app-files/free-shiping.jpg', 
+      title: "Бесплатная доставка", 
       description: "Хотя Lorem ipsum напоминает классический латинский."
     ), 
-    Stock(
-      img: 'https://picsum.photos/250?image=34', 
-      title: "Новость 2", 
-      description: "Lorem ipsum – псевдо-латинский текст, который используется для веб дизайна, типографии, оборудования, и распечатки"
-    )
   ];
 
   @override
