@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:krepm_new/startView.dart';
 import 'homeView.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(KrepMApp());
 

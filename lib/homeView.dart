@@ -81,7 +81,7 @@ class _HomeViewState extends State<HomeView> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => QRCodeView())
+                              MaterialPageRoute(builder: (context) => QRCodeView(cardNumber: "KREPM" + _profileCard.card,))
                             );
                           },
                           child: Container(
